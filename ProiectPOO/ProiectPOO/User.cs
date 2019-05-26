@@ -15,12 +15,32 @@ namespace Entities
         private string Password { get; set; }
         private string Email { get; set; }
 
+        public User()
+        {
+            this.Id = Guid.NewGuid();
+        }
+
+        public User(Guid Id, string Nume, string Prenume, string Username, string Password, string Email)
+        {
+            this.Id = Id;
+            this.Nume = Nume;
+            this.Prenume = Prenume;
+            this.Username = Username;
+            this.Password = Password;
+            this.Email = Email;
+        }
+
         public void Login()
         {
 
         }
 
         public void Register()
+        {
+
+        }
+
+        public void WriteToFile()
         {
 
         }

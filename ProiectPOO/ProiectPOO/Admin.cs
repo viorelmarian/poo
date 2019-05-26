@@ -8,5 +8,8 @@ namespace Entities
 {
     public class Admin : User
     {
+        public Admin() : base() { }
+        public Admin(Guid Id, string Nume, string Prenume, string Username, string Password, string Email)
+            : base(Id, Nume, Prenume, Username, Password, Email) { }
     }
 }

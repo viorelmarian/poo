@@ -8,5 +8,8 @@ namespace Entities
 {
     public class Guest : User
     {
+        public Guest() : base() { }
+        public Guest(Guid Id, string Nume, string Prenume, string Username, string Password, string Email) 
+            : base(Id, Nume, Prenume, Username, Password, Email) { }
     }
 }

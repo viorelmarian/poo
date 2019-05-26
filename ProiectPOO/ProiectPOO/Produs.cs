@@ -12,9 +12,9 @@ namespace Entities
         private string Denumire { get; set; }
         private string Descriere { get; set; }
         private string Categorie { get; set; }
-        private float Pret { get; set; }
+        private double Pret { get; set; }
 
-        public Produs(Guid Id, string Denumire, string Descriere, string Categorie, float Pret)
+        public Produs(Guid Id, string Denumire, string Descriere, string Categorie, double Pret)
         {
             this.Id = Id;
             this.Denumire = Denumire;
@@ -31,6 +31,11 @@ namespace Entities
         public virtual bool CheckValability()
         {
             return true;
+        }
+
+        public void WriteToFile()
+        {
+
         }
     }
 }

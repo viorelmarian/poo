@@ -9,9 +9,10 @@ namespace Entities
     public class Perisabil : Produs
     {
         private DateTime DataExpirare { get; set; }
+
         public Perisabil() : base() { }
 
-        public Perisabil(Guid Id, string Denumire, string Descriere, string Categorie, float Pret, DateTime DataExpirare)
+        public Perisabil(Guid Id, string Denumire, string Descriere, string Categorie, double Pret, DateTime DataExpirare)
             : base(Id, Denumire, Descriere, Categorie, Pret)
         {
             this.DataExpirare = DataExpirare;
