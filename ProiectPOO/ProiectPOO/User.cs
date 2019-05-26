@@ -8,12 +8,12 @@ namespace Entities
 {
     public class User
     {
-        private Guid Id { get; set; }
-        private string Nume { get; set; }
-        private string Prenume { get; set; }
-        private string Username { get; set; }
-        private string Password { get; set; }
-        private string Email { get; set; }
+        public Guid Id { get; private set; }
+        public string Nume { get; private set; }
+        public string Prenume { get; private set; }
+        public string Username { get; private set; }
+        public string Password { get; private set; }
+        public string Email { get; private set; }
 
         public User()
         {
@@ -40,9 +40,6 @@ namespace Entities
 
         }
 
-        public void WriteToFile()
-        {
-
-        }
+        public virtual void WriteToFile() { }
     }
 }

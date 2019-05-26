@@ -11,5 +11,16 @@ namespace Entities
         public Admin() : base() { }
         public Admin(Guid Id, string Nume, string Prenume, string Username, string Password, string Email)
             : base(Id, Nume, Prenume, Username, Password, Email) { }
+
+        public override void WriteToFile()
+        {
+            string line = this.Id.ToString() + '|' +
+                          this.Nume + '|' +
+                          this.Prenume + '|' +
+                          this.Username + '|' +
+                          this.Password + '|' +
+                          this.Email + "\n";
+            System.IO.File.WriteAllText("Administratori.txt", line);
+        }
     }
 }

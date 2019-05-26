@@ -8,19 +8,21 @@ namespace Entities
 {
     public class Produs
     {
-        private Guid Id { get; set; }
-        private string Denumire { get; set; }
-        private string Descriere { get; set; }
-        private string Categorie { get; set; }
-        private double Pret { get; set; }
+        public Guid Id { get; private set; }
+        public string Denumire { get; private set; }
+        public string Descriere { get; private set; }
+        public string Categorie { get; private set; }
+        public double Pret { get; private set; }
+        public bool Perisabil { get; private set; }
 
-        public Produs(Guid Id, string Denumire, string Descriere, string Categorie, double Pret)
+        public Produs(Guid Id, string Denumire, string Descriere, string Categorie, double Pret, bool Perisabil)
         {
             this.Id = Id;
             this.Denumire = Denumire;
             this.Descriere = Descriere;
             this.Categorie = Categorie;
             this.Pret = Pret;
+            this.Perisabil = Perisabil;
         }
 
         public Produs()
@@ -33,9 +35,6 @@ namespace Entities
             return true;
         }
 
-        public void WriteToFile()
-        {
-
-        }
+        public virtual void WriteToFile() { }
     }
 }

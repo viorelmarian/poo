@@ -8,12 +8,12 @@ namespace Entities
 {
     public class Perisabil : Produs
     {
-        private DateTime DataExpirare { get; set; }
+        public  DateTime DataExpirare { get; private set; }
 
         public Perisabil() : base() { }
 
-        public Perisabil(Guid Id, string Denumire, string Descriere, string Categorie, double Pret, DateTime DataExpirare)
-            : base(Id, Denumire, Descriere, Categorie, Pret)
+        public Perisabil(Guid Id, string Denumire, string Descriere, string Categorie, double Pret, bool Perisabil, DateTime DataExpirare)
+            : base(Id, Denumire, Descriere, Categorie, Pret, Perisabil)
         {
             this.DataExpirare = DataExpirare;
         }
@@ -28,6 +28,18 @@ namespace Entities
             {
                 return false;
             }
+        }
+
+        public override void WriteToFile()
+        {
+            string line = this.Id.ToString() + '|' +
+                          this.Denumire + '|' +
+                          this.Descriere + '|' +
+                          this.Categorie + '|' +
+                          this.Pret.ToString() + '|' +
+                          this.Perisabil.ToString() + '|' +
+                          this.DataExpirare + "\n";
+            System.IO.File.AppendAllText("Perisabile.txt", line);
         }
     }
 }

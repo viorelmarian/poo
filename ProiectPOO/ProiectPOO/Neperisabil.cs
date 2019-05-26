@@ -8,13 +8,13 @@ namespace Entities
 {
     public class Neperisabil : Produs
     {
-        private DateTime DataAchizitie { get; set; }
-        private int Garantie { get; set; }
+        public DateTime DataAchizitie { get; private set; }
+        public int Garantie { get; private set; }
 
         public Neperisabil() : base() { }
 
-        public Neperisabil(Guid Id, string Denumire, string Descriere, string Categorie, double Pret, DateTime DataAchizitie, int Garantie)
-            : base(Id, Denumire, Descriere, Categorie, Pret)
+        public Neperisabil(Guid Id, string Denumire, string Descriere, string Categorie, double Pret, bool Perisabil, DateTime DataAchizitie, int Garantie)
+            : base(Id, Denumire, Descriere, Categorie, Pret, Perisabil)
         {
             this.DataAchizitie = DataAchizitie;
             this.Garantie = Garantie;
@@ -30,6 +30,19 @@ namespace Entities
             {
                 return false;
             }
+        }
+
+        public override void WriteToFile()
+        {
+            string line = this.Id.ToString() + '|' +
+                          this.Denumire + '|' +
+                          this.Descriere + '|' +
+                          this.Categorie + '|' +
+                          this.Pret.ToString() + '|' +
+                          this.Perisabil.ToString() + '|' +
+                          this.DataAchizitie + '|' +
+                          this.Garantie + "\n";
+            System.IO.File.WriteAllText("Neperisabile.txt", line);
         }
     }
 }
