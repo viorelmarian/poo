@@ -8,14 +8,14 @@ namespace Entities
 {
     public class Produs
     {
-        public Guid Id { get; private set; }
+        public int Id { get; private set; }
         public string Denumire { get; private set; }
         public string Descriere { get; private set; }
         public string Categorie { get; private set; }
         public double Pret { get; private set; }
         public bool Perisabil { get; private set; }
 
-        public Produs(Guid Id, string Denumire, string Descriere, string Categorie, double Pret, bool Perisabil)
+        public Produs(int Id, string Denumire, string Descriere, string Categorie, double Pret, bool Perisabil)
         {
             this.Id = Id;
             this.Denumire = Denumire;
@@ -27,7 +27,6 @@ namespace Entities
 
         public Produs()
         {
-            this.Id = Guid.NewGuid();
         }
 
         public virtual bool CheckValability()

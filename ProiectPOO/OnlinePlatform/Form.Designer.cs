@@ -78,6 +78,8 @@
             this.lUsername = new System.Windows.Forms.TextBox();
             this.lPassword = new System.Windows.Forms.TextBox();
             this.registerPanel = new System.Windows.Forms.Panel();
+            this.rbAdmin = new System.Windows.Forms.RadioButton();
+            this.rbGuest = new System.Windows.Forms.RadioButton();
             this.rUsername = new System.Windows.Forms.TextBox();
             this.Register = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
@@ -89,6 +91,25 @@
             this.rPrenume = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.rNume = new System.Windows.Forms.TextBox();
+            this.AdminPage = new System.Windows.Forms.GroupBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.aGarantie = new System.Windows.Forms.NumericUpDown();
+            this.aDataExp = new System.Windows.Forms.DateTimePicker();
+            this.aPret = new System.Windows.Forms.NumericUpDown();
+            this.aCategorie = new System.Windows.Forms.ComboBox();
+            this.aDescriere = new System.Windows.Forms.TextBox();
+            this.aDenumire = new System.Windows.Forms.TextBox();
+            this.btnAddProduct = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.rbNeperisabil = new System.Windows.Forms.RadioButton();
+            this.rbPerisabil = new System.Windows.Forms.RadioButton();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.FacturaPage = new System.Windows.Forms.GroupBox();
+            this.Factura = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -101,6 +122,12 @@
             this.LoginPage.SuspendLayout();
             this.loginPanel.SuspendLayout();
             this.registerPanel.SuspendLayout();
+            this.AdminPage.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.aGarantie)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aPret)).BeginInit();
+            this.FacturaPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Factura)).BeginInit();
             this.SuspendLayout();
             // 
             // cFinalizare
@@ -410,6 +437,7 @@
             this.facturaToolStripMenuItem.Name = "facturaToolStripMenuItem";
             this.facturaToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
             this.facturaToolStripMenuItem.Text = "Factura";
+            this.facturaToolStripMenuItem.Click += new System.EventHandler(this.facturaToolStripMenuItem_Click);
             // 
             // loginToolStripMenuItem
             // 
@@ -537,6 +565,8 @@
             // 
             // registerPanel
             // 
+            this.registerPanel.Controls.Add(this.rbAdmin);
+            this.registerPanel.Controls.Add(this.rbGuest);
             this.registerPanel.Controls.Add(this.rUsername);
             this.registerPanel.Controls.Add(this.Register);
             this.registerPanel.Controls.Add(this.label10);
@@ -553,6 +583,28 @@
             this.registerPanel.Size = new System.Drawing.Size(294, 267);
             this.registerPanel.TabIndex = 17;
             // 
+            // rbAdmin
+            // 
+            this.rbAdmin.AutoSize = true;
+            this.rbAdmin.Location = new System.Drawing.Point(39, 207);
+            this.rbAdmin.Name = "rbAdmin";
+            this.rbAdmin.Size = new System.Drawing.Size(54, 17);
+            this.rbAdmin.TabIndex = 18;
+            this.rbAdmin.TabStop = true;
+            this.rbAdmin.Text = "Admin";
+            this.rbAdmin.UseVisualStyleBackColor = true;
+            // 
+            // rbGuest
+            // 
+            this.rbGuest.AutoSize = true;
+            this.rbGuest.Location = new System.Drawing.Point(39, 184);
+            this.rbGuest.Name = "rbGuest";
+            this.rbGuest.Size = new System.Drawing.Size(53, 17);
+            this.rbGuest.TabIndex = 17;
+            this.rbGuest.TabStop = true;
+            this.rbGuest.Text = "Guest";
+            this.rbGuest.UseVisualStyleBackColor = true;
+            // 
             // rUsername
             // 
             this.rUsername.Location = new System.Drawing.Point(95, 96);
@@ -562,9 +614,9 @@
             // 
             // Register
             // 
-            this.Register.Location = new System.Drawing.Point(95, 195);
+            this.Register.Location = new System.Drawing.Point(95, 184);
             this.Register.Name = "Register";
-            this.Register.Size = new System.Drawing.Size(161, 28);
+            this.Register.Size = new System.Drawing.Size(161, 40);
             this.Register.TabIndex = 16;
             this.Register.Text = "Register";
             this.Register.UseVisualStyleBackColor = true;
@@ -644,15 +696,196 @@
             this.rNume.Size = new System.Drawing.Size(161, 20);
             this.rNume.TabIndex = 11;
             // 
+            // AdminPage
+            // 
+            this.AdminPage.Controls.Add(this.panel3);
+            this.AdminPage.Location = new System.Drawing.Point(6, 27);
+            this.AdminPage.Name = "AdminPage";
+            this.AdminPage.Size = new System.Drawing.Size(852, 487);
+            this.AdminPage.TabIndex = 5;
+            this.AdminPage.TabStop = false;
+            this.AdminPage.Text = "Admin";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.aGarantie);
+            this.panel3.Controls.Add(this.aDataExp);
+            this.panel3.Controls.Add(this.aPret);
+            this.panel3.Controls.Add(this.aCategorie);
+            this.panel3.Controls.Add(this.aDescriere);
+            this.panel3.Controls.Add(this.aDenumire);
+            this.panel3.Controls.Add(this.btnAddProduct);
+            this.panel3.Controls.Add(this.label18);
+            this.panel3.Controls.Add(this.rbNeperisabil);
+            this.panel3.Controls.Add(this.rbPerisabil);
+            this.panel3.Controls.Add(this.label15);
+            this.panel3.Controls.Add(this.label16);
+            this.panel3.Controls.Add(this.label20);
+            this.panel3.Controls.Add(this.label17);
+            this.panel3.Controls.Add(this.label19);
+            this.panel3.Location = new System.Drawing.Point(247, 118);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(358, 250);
+            this.panel3.TabIndex = 8;
+            // 
+            // aGarantie
+            // 
+            this.aGarantie.Location = new System.Drawing.Point(121, 160);
+            this.aGarantie.Name = "aGarantie";
+            this.aGarantie.Size = new System.Drawing.Size(174, 20);
+            this.aGarantie.TabIndex = 15;
+            // 
+            // aDataExp
+            // 
+            this.aDataExp.Location = new System.Drawing.Point(121, 131);
+            this.aDataExp.Name = "aDataExp";
+            this.aDataExp.Size = new System.Drawing.Size(174, 20);
+            this.aDataExp.TabIndex = 13;
+            // 
+            // aPret
+            // 
+            this.aPret.Location = new System.Drawing.Point(121, 102);
+            this.aPret.Name = "aPret";
+            this.aPret.Size = new System.Drawing.Size(174, 20);
+            this.aPret.TabIndex = 12;
+            // 
+            // aCategorie
+            // 
+            this.aCategorie.FormattingEnabled = true;
+            this.aCategorie.Location = new System.Drawing.Point(121, 72);
+            this.aCategorie.Name = "aCategorie";
+            this.aCategorie.Size = new System.Drawing.Size(174, 21);
+            this.aCategorie.TabIndex = 11;
+            // 
+            // aDescriere
+            // 
+            this.aDescriere.Location = new System.Drawing.Point(121, 43);
+            this.aDescriere.Name = "aDescriere";
+            this.aDescriere.Size = new System.Drawing.Size(174, 20);
+            this.aDescriere.TabIndex = 10;
+            // 
+            // aDenumire
+            // 
+            this.aDenumire.Location = new System.Drawing.Point(121, 14);
+            this.aDenumire.Name = "aDenumire";
+            this.aDenumire.Size = new System.Drawing.Size(174, 20);
+            this.aDenumire.TabIndex = 9;
+            // 
+            // btnAddProduct
+            // 
+            this.btnAddProduct.Location = new System.Drawing.Point(121, 197);
+            this.btnAddProduct.Name = "btnAddProduct";
+            this.btnAddProduct.Size = new System.Drawing.Size(174, 39);
+            this.btnAddProduct.TabIndex = 8;
+            this.btnAddProduct.Text = "Add Product";
+            this.btnAddProduct.UseVisualStyleBackColor = true;
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(46, 107);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(26, 13);
+            this.label18.TabIndex = 3;
+            this.label18.Text = "Pret";
+            // 
+            // rbNeperisabil
+            // 
+            this.rbNeperisabil.AutoSize = true;
+            this.rbNeperisabil.Location = new System.Drawing.Point(46, 219);
+            this.rbNeperisabil.Name = "rbNeperisabil";
+            this.rbNeperisabil.Size = new System.Drawing.Size(77, 17);
+            this.rbNeperisabil.TabIndex = 7;
+            this.rbNeperisabil.TabStop = true;
+            this.rbNeperisabil.Text = "Neperisabil";
+            this.rbNeperisabil.UseVisualStyleBackColor = true;
+            // 
+            // rbPerisabil
+            // 
+            this.rbPerisabil.AutoSize = true;
+            this.rbPerisabil.Location = new System.Drawing.Point(46, 197);
+            this.rbPerisabil.Name = "rbPerisabil";
+            this.rbPerisabil.Size = new System.Drawing.Size(64, 17);
+            this.rbPerisabil.TabIndex = 6;
+            this.rbPerisabil.TabStop = true;
+            this.rbPerisabil.Text = "Perisabil";
+            this.rbPerisabil.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(46, 17);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(52, 13);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Denumire";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(46, 47);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(52, 13);
+            this.label16.TabIndex = 1;
+            this.label16.Text = "Descriere";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(46, 167);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(47, 13);
+            this.label20.TabIndex = 5;
+            this.label20.Text = "Garantie";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(46, 77);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(52, 13);
+            this.label17.TabIndex = 2;
+            this.label17.Text = "Categorie";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(46, 137);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(71, 13);
+            this.label19.TabIndex = 4;
+            this.label19.Text = "Data Expirare";
+            // 
+            // FacturaPage
+            // 
+            this.FacturaPage.Controls.Add(this.Factura);
+            this.FacturaPage.Location = new System.Drawing.Point(6, 27);
+            this.FacturaPage.Name = "FacturaPage";
+            this.FacturaPage.Size = new System.Drawing.Size(852, 487);
+            this.FacturaPage.TabIndex = 6;
+            this.FacturaPage.TabStop = false;
+            this.FacturaPage.Text = "Factura";
+            // 
+            // Factura
+            // 
+            this.Factura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Factura.Location = new System.Drawing.Point(6, 19);
+            this.Factura.Name = "Factura";
+            this.Factura.Size = new System.Drawing.Size(839, 462);
+            this.Factura.TabIndex = 0;
+            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(870, 526);
+            this.Controls.Add(this.FacturaPage);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.ProductPage);
+            this.Controls.Add(this.AdminPage);
             this.Controls.Add(this.LoginPage);
             this.Controls.Add(this.CommandPage);
+            this.Controls.Add(this.ProductPage);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form";
             this.Text = "Form1";
@@ -676,6 +909,13 @@
             this.loginPanel.PerformLayout();
             this.registerPanel.ResumeLayout(false);
             this.registerPanel.PerformLayout();
+            this.AdminPage.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.aGarantie)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aPret)).EndInit();
+            this.FacturaPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Factura)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -743,6 +983,27 @@
         private System.Windows.Forms.ToolStripMenuItem registerToolStripMenuItem;
         private System.Windows.Forms.Panel loginPanel;
         private System.Windows.Forms.Panel registerPanel;
+        private System.Windows.Forms.RadioButton rbAdmin;
+        private System.Windows.Forms.RadioButton rbGuest;
+        private System.Windows.Forms.GroupBox AdminPage;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.DateTimePicker aDataExp;
+        private System.Windows.Forms.NumericUpDown aPret;
+        private System.Windows.Forms.ComboBox aCategorie;
+        private System.Windows.Forms.TextBox aDescriere;
+        private System.Windows.Forms.TextBox aDenumire;
+        private System.Windows.Forms.Button btnAddProduct;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.RadioButton rbNeperisabil;
+        private System.Windows.Forms.RadioButton rbPerisabil;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.NumericUpDown aGarantie;
+        private System.Windows.Forms.GroupBox FacturaPage;
+        private System.Windows.Forms.DataGridView Factura;
     }
 }
 

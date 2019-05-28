@@ -9,8 +9,8 @@ namespace Entities
     public class Admin : User
     {
         public Admin() : base() { }
-        public Admin(Guid Id, string Nume, string Prenume, string Username, string Password, string Email)
-            : base(Id, Nume, Prenume, Username, Password, Email) { }
+        public Admin(int Id, string Nume, string Prenume, string Username, string Password, string Email, bool IsAdmin)
+            : base(Id, Nume, Prenume, Username, Password, Email, IsAdmin) { }
 
         public override void WriteToFile()
         {
@@ -19,7 +19,8 @@ namespace Entities
                           this.Prenume + '|' +
                           this.Username + '|' +
                           this.Password + '|' +
-                          this.Email + "\n";
+                          this.Email + '|' +
+                          this.IsAdmin.ToString() + "\n";
             System.IO.File.WriteAllText("Administratori.txt", line);
         }
     }

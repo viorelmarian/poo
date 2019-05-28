@@ -8,15 +8,22 @@ namespace Entities
 {
     public class Comanda
     {
-        public Guid Id { get; private set; }
-        public Guid ClientId { get; private set; }
-        public List<Tuple<Guid, int>> Produse { get; private set; }
+        public Int64 Id { get; private set; }
+        public int ClientId { get; private set; }
+        public bool Perisabil { get; set; }
+        public List<Tuple<int, int, bool>> Produse { get; private set; }
 
-        public Comanda(Guid ClientId)
+        public Comanda(int ClientId)
         {
+            this.Id = Convert.ToInt64(DateTime.Now.Year.ToString() +
+                DateTime.Now.Month.ToString() +
+                DateTime.Now.Day.ToString() +
+                DateTime.Now.Hour.ToString() +
+                DateTime.Now.Minute.ToString() +
+                DateTime.Now.Second.ToString() +
+                DateTime.Now.Millisecond.ToString());
             this.ClientId = ClientId;
-            this.Id = Guid.NewGuid();
-            this.Produse = new List<Tuple<Guid, int>>();
+            this.Produse = new List<Tuple<int, int, bool>>();
         }
 
         public void TrimiteComanda()

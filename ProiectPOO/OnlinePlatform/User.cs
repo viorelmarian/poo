@@ -8,19 +8,18 @@ namespace Entities
 {
     public class User
     {
-        public Guid Id { get; private set; }
+        public int Id { get; private set; }
         public string Nume { get; private set; }
         public string Prenume { get; private set; }
         public string Username { get; private set; }
         public string Password { get; private set; }
         public string Email { get; private set; }
-
+        public bool IsAdmin { get; set; }
         public User()
         {
-            this.Id = Guid.NewGuid();
         }
 
-        public User(Guid Id, string Nume, string Prenume, string Username, string Password, string Email)
+        public User(int Id, string Nume, string Prenume, string Username, string Password, string Email, bool IsAdmin)
         {
             this.Id = Id;
             this.Nume = Nume;
@@ -28,16 +27,7 @@ namespace Entities
             this.Username = Username;
             this.Password = Password;
             this.Email = Email;
-        }
-
-        public void Login()
-        {
-
-        }
-
-        public void Register()
-        {
-
+            this.IsAdmin = IsAdmin;
         }
 
         public virtual void WriteToFile() { }

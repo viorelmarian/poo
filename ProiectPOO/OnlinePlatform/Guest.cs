@@ -9,8 +9,8 @@ namespace Entities
     public class Guest : User
     {
         public Guest() : base() { }
-        public Guest(Guid Id, string Nume, string Prenume, string Username, string Password, string Email) 
-            : base(Id, Nume, Prenume, Username, Password, Email) { }
+        public Guest(int Id, string Nume, string Prenume, string Username, string Password, string Email, bool IsAdmin) 
+            : base(Id, Nume, Prenume, Username, Password, Email, IsAdmin) { }
 
         public override void WriteToFile()
         {
@@ -19,7 +19,8 @@ namespace Entities
                           this.Prenume + '|' +
                           this.Username + '|' +
                           this.Password + '|' +
-                          this.Email + "\n";
+                          this.Email + '|' + 
+                          this.IsAdmin.ToString() + "\n";
             System.IO.File.AppendAllText("Utilizatori.txt", line);
         }
     }

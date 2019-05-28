@@ -6,23 +6,21 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class Neperisabil : Produs
+    public class Perisabil : Produs
     {
-        public DateTime DataAchizitie { get; private set; }
-        public int Garantie { get; private set; }
+        public  DateTime DataExpirare { get; private set; }
 
-        public Neperisabil() : base() { }
+        public Perisabil() : base() { }
 
-        public Neperisabil(Guid Id, string Denumire, string Descriere, string Categorie, double Pret, bool Perisabil, DateTime DataAchizitie, int Garantie)
+        public Perisabil(int Id, string Denumire, string Descriere, string Categorie, double Pret, bool Perisabil, DateTime DataExpirare)
             : base(Id, Denumire, Descriere, Categorie, Pret, Perisabil)
         {
-            this.DataAchizitie = DataAchizitie;
-            this.Garantie = Garantie;
+            this.DataExpirare = DataExpirare;
         }
 
         public override bool CheckValability()
         {
-            if (DateTime.Compare(DateTime.Now, DateTime.Now.AddMonths(this.Garantie)) <= 0)
+            if (DateTime.Compare(DateTime.Now, this.DataExpirare) <= 0)
             {
                 return true;
             }
@@ -40,9 +38,8 @@ namespace Entities
                           this.Categorie + '|' +
                           this.Pret.ToString() + '|' +
                           this.Perisabil.ToString() + '|' +
-                          this.DataAchizitie + '|' +
-                          this.Garantie + "\n";
-            System.IO.File.WriteAllText("Neperisabile.txt", line);
+                          this.DataExpirare + "\n";
+            System.IO.File.AppendAllText("Perisabile.txt", line);
         }
     }
 }
