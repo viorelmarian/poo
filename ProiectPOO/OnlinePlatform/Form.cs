@@ -118,6 +118,7 @@ namespace OnlinePlatform
             ReadFromFile(0);// Citire Tot din Fisiere
             CommandPage.Hide();
             ProductPage.Hide();
+            registerPanel.Hide();
         }
 
         private void Form_Load(object sender, EventArgs e)
@@ -222,16 +223,23 @@ namespace OnlinePlatform
 
                 comanda.Produse.Add(newItem);
                 pInCantitate.Value = 0;
+                MessageBox.Show("Produsele au fost adaugate in cos!", "Information");
             }
         }
 
         private void comandaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ProductPage.Visible = false;
-            CommandPage.Visible = true;
             if (currentUser != null)
             {
-                LoginPage.Visible = false;
+                CommandPage.Show();
+                ProductPage.Hide();
+                LoginPage.Hide();
+            }
+            else
+            {
+                LoginPage.Show();
+                ProductPage.Hide();
+                CommandPage.Hide();
             }
             lvComanda.Items.Clear();
             double total = 0;
@@ -274,11 +282,17 @@ namespace OnlinePlatform
 
         private void produseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ProductPage.Visible = true;
-            CommandPage.Visible = false;
             if (currentUser != null)
             {
-                LoginPage.Visible = false;
+                ProductPage.Show();
+                CommandPage.Hide();
+                LoginPage.Hide();
+            }
+            else
+            {
+                LoginPage.Show();
+                ProductPage.Hide();
+                CommandPage.Hide();
             }
         }
 
@@ -286,10 +300,12 @@ namespace OnlinePlatform
         {
             comanda.TrimiteComanda();
             comanda = null;
+            MessageBox.Show("Comanda a fost plasata cu succes!", "Information");
         }
 
         private void Login_Click(object sender, EventArgs e)
         {
+            ReadFromFile(3);
             string username = lUsername.Text;
             string password = lPassword.Text;
 
@@ -298,6 +314,9 @@ namespace OnlinePlatform
                 if (item.Username == username && item.Password == password)
                 {
                     currentUser = new Guest(item.Id, item.Nume, item.Prenume, item.Username, item.Password, item.Email);
+                    LoginPage.Hide();
+                    CommandPage.Hide();
+                    ProductPage.Show();
                 }
             }
         }
@@ -306,6 +325,21 @@ namespace OnlinePlatform
         {
             Guest newUser = new Guest(Guid.NewGuid(), rNume.Text, rPrenume.Text, rUsername.Text, rPassword.Text, rEmail.Text);
             newUser.WriteToFile();
+            registerPanel.Hide();
+            MessageBox.Show("Inregistrare cu succes!", "Information");
+        }
+
+        private void registerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            registerPanel.Show();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentUser = null;
+            ProductPage.Hide();
+            CommandPage.Hide();
+            LoginPage.Show();
         }
     }
 }

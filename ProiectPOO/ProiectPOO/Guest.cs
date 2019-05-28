@@ -20,7 +20,7 @@ namespace Entities
                           this.Username + '|' +
                           this.Password + '|' +
                           this.Email + "\n";
-            System.IO.File.WriteAllText("Utilizatori.txt", line);
+            System.IO.File.AppendAllText("Utilizatori.txt", line);
         }
     }
 }

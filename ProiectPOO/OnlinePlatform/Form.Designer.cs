@@ -67,25 +67,28 @@
             this.facturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.registerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ProductPage = new System.Windows.Forms.GroupBox();
             this.CommandPage = new System.Windows.Forms.GroupBox();
             this.LoginPage = new System.Windows.Forms.GroupBox();
-            this.Register = new System.Windows.Forms.Button();
-            this.rEmail = new System.Windows.Forms.TextBox();
-            this.rPassword = new System.Windows.Forms.TextBox();
-            this.rUsername = new System.Windows.Forms.TextBox();
-            this.rPrenume = new System.Windows.Forms.TextBox();
-            this.rNume = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.Login = new System.Windows.Forms.Button();
-            this.lPassword = new System.Windows.Forms.TextBox();
-            this.lUsername = new System.Windows.Forms.TextBox();
-            this.Password = new System.Windows.Forms.Label();
+            this.loginPanel = new System.Windows.Forms.Panel();
             this.Username = new System.Windows.Forms.Label();
+            this.Password = new System.Windows.Forms.Label();
+            this.Login = new System.Windows.Forms.Button();
+            this.lUsername = new System.Windows.Forms.TextBox();
+            this.lPassword = new System.Windows.Forms.TextBox();
+            this.registerPanel = new System.Windows.Forms.Panel();
+            this.rUsername = new System.Windows.Forms.TextBox();
+            this.Register = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.rEmail = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.rPassword = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.rPrenume = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.rNume = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -96,6 +99,8 @@
             this.ProductPage.SuspendLayout();
             this.CommandPage.SuspendLayout();
             this.LoginPage.SuspendLayout();
+            this.loginPanel.SuspendLayout();
+            this.registerPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // cFinalizare
@@ -409,8 +414,9 @@
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
-            this.loginToolStripMenuItem.Text = "Login";
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.loginToolStripMenuItem.Text = "Logout";
+            this.loginToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 
@@ -418,12 +424,20 @@
             this.produseToolStripMenuItem,
             this.comandaToolStripMenuItem,
             this.facturaToolStripMenuItem,
-            this.loginToolStripMenuItem});
+            this.loginToolStripMenuItem,
+            this.registerToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(870, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // registerToolStripMenuItem
+            // 
+            this.registerToolStripMenuItem.Name = "registerToolStripMenuItem";
+            this.registerToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.registerToolStripMenuItem.Text = "Register";
+            this.registerToolStripMenuItem.Click += new System.EventHandler(this.registerToolStripMenuItem_Click);
             // 
             // ProductPage
             // 
@@ -457,22 +471,8 @@
             // 
             // LoginPage
             // 
-            this.LoginPage.Controls.Add(this.Register);
-            this.LoginPage.Controls.Add(this.rEmail);
-            this.LoginPage.Controls.Add(this.rPassword);
-            this.LoginPage.Controls.Add(this.rUsername);
-            this.LoginPage.Controls.Add(this.rPrenume);
-            this.LoginPage.Controls.Add(this.rNume);
-            this.LoginPage.Controls.Add(this.label14);
-            this.LoginPage.Controls.Add(this.label13);
-            this.LoginPage.Controls.Add(this.label12);
-            this.LoginPage.Controls.Add(this.label11);
-            this.LoginPage.Controls.Add(this.label10);
-            this.LoginPage.Controls.Add(this.Login);
-            this.LoginPage.Controls.Add(this.lPassword);
-            this.LoginPage.Controls.Add(this.lUsername);
-            this.LoginPage.Controls.Add(this.Password);
-            this.LoginPage.Controls.Add(this.Username);
+            this.LoginPage.Controls.Add(this.loginPanel);
+            this.LoginPage.Controls.Add(this.registerPanel);
             this.LoginPage.Location = new System.Drawing.Point(6, 27);
             this.LoginPage.Name = "LoginPage";
             this.LoginPage.Size = new System.Drawing.Size(852, 487);
@@ -480,100 +480,39 @@
             this.LoginPage.TabStop = false;
             this.LoginPage.Text = "Login";
             // 
-            // Register
+            // loginPanel
             // 
-            this.Register.Location = new System.Drawing.Point(70, 350);
-            this.Register.Name = "Register";
-            this.Register.Size = new System.Drawing.Size(161, 28);
-            this.Register.TabIndex = 16;
-            this.Register.Text = "Register";
-            this.Register.UseVisualStyleBackColor = true;
-            this.Register.Click += new System.EventHandler(this.Register_Click);
+            this.loginPanel.Controls.Add(this.Username);
+            this.loginPanel.Controls.Add(this.Password);
+            this.loginPanel.Controls.Add(this.Login);
+            this.loginPanel.Controls.Add(this.lUsername);
+            this.loginPanel.Controls.Add(this.lPassword);
+            this.loginPanel.Location = new System.Drawing.Point(279, 25);
+            this.loginPanel.Name = "loginPanel";
+            this.loginPanel.Size = new System.Drawing.Size(293, 146);
+            this.loginPanel.TabIndex = 18;
             // 
-            // rEmail
+            // Username
             // 
-            this.rEmail.Location = new System.Drawing.Point(70, 313);
-            this.rEmail.Name = "rEmail";
-            this.rEmail.Size = new System.Drawing.Size(161, 20);
-            this.rEmail.TabIndex = 15;
+            this.Username.AutoSize = true;
+            this.Username.Location = new System.Drawing.Point(36, 30);
+            this.Username.Name = "Username";
+            this.Username.Size = new System.Drawing.Size(55, 13);
+            this.Username.TabIndex = 0;
+            this.Username.Text = "Username";
             // 
-            // rPassword
+            // Password
             // 
-            this.rPassword.Location = new System.Drawing.Point(70, 282);
-            this.rPassword.Name = "rPassword";
-            this.rPassword.Size = new System.Drawing.Size(161, 20);
-            this.rPassword.TabIndex = 14;
-            this.rPassword.UseSystemPasswordChar = true;
-            // 
-            // rUsername
-            // 
-            this.rUsername.Location = new System.Drawing.Point(70, 251);
-            this.rUsername.Name = "rUsername";
-            this.rUsername.Size = new System.Drawing.Size(161, 20);
-            this.rUsername.TabIndex = 13;
-            // 
-            // rPrenume
-            // 
-            this.rPrenume.Location = new System.Drawing.Point(70, 220);
-            this.rPrenume.Name = "rPrenume";
-            this.rPrenume.Size = new System.Drawing.Size(161, 20);
-            this.rPrenume.TabIndex = 12;
-            // 
-            // rNume
-            // 
-            this.rNume.Location = new System.Drawing.Point(70, 189);
-            this.rNume.Name = "rNume";
-            this.rNume.Size = new System.Drawing.Size(161, 20);
-            this.rNume.TabIndex = 11;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(13, 316);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(32, 13);
-            this.label14.TabIndex = 9;
-            this.label14.Text = "Email";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(13, 285);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(53, 13);
-            this.label13.TabIndex = 8;
-            this.label13.Text = "Password";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(13, 254);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(55, 13);
-            this.label12.TabIndex = 7;
-            this.label12.Text = "Username";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(13, 223);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(49, 13);
-            this.label11.TabIndex = 6;
-            this.label11.Text = "Prenume";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(13, 192);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(35, 13);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "Nume";
+            this.Password.AutoSize = true;
+            this.Password.Location = new System.Drawing.Point(38, 63);
+            this.Password.Name = "Password";
+            this.Password.Size = new System.Drawing.Size(53, 13);
+            this.Password.TabIndex = 1;
+            this.Password.Text = "Password";
             // 
             // Login
             // 
-            this.Login.Location = new System.Drawing.Point(70, 94);
+            this.Login.Location = new System.Drawing.Point(95, 92);
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(161, 23);
             this.Login.TabIndex = 4;
@@ -581,48 +520,139 @@
             this.Login.UseVisualStyleBackColor = true;
             this.Login.Click += new System.EventHandler(this.Login_Click);
             // 
+            // lUsername
+            // 
+            this.lUsername.Location = new System.Drawing.Point(95, 27);
+            this.lUsername.Name = "lUsername";
+            this.lUsername.Size = new System.Drawing.Size(161, 20);
+            this.lUsername.TabIndex = 2;
+            // 
             // lPassword
             // 
-            this.lPassword.Location = new System.Drawing.Point(70, 61);
+            this.lPassword.Location = new System.Drawing.Point(95, 59);
             this.lPassword.Name = "lPassword";
             this.lPassword.Size = new System.Drawing.Size(161, 20);
             this.lPassword.TabIndex = 3;
             this.lPassword.UseSystemPasswordChar = true;
             // 
-            // lUsername
+            // registerPanel
             // 
-            this.lUsername.Location = new System.Drawing.Point(70, 29);
-            this.lUsername.Name = "lUsername";
-            this.lUsername.Size = new System.Drawing.Size(161, 20);
-            this.lUsername.TabIndex = 2;
+            this.registerPanel.Controls.Add(this.rUsername);
+            this.registerPanel.Controls.Add(this.Register);
+            this.registerPanel.Controls.Add(this.label10);
+            this.registerPanel.Controls.Add(this.rEmail);
+            this.registerPanel.Controls.Add(this.label11);
+            this.registerPanel.Controls.Add(this.rPassword);
+            this.registerPanel.Controls.Add(this.label12);
+            this.registerPanel.Controls.Add(this.label13);
+            this.registerPanel.Controls.Add(this.rPrenume);
+            this.registerPanel.Controls.Add(this.label14);
+            this.registerPanel.Controls.Add(this.rNume);
+            this.registerPanel.Location = new System.Drawing.Point(279, 190);
+            this.registerPanel.Name = "registerPanel";
+            this.registerPanel.Size = new System.Drawing.Size(294, 267);
+            this.registerPanel.TabIndex = 17;
             // 
-            // Password
+            // rUsername
             // 
-            this.Password.AutoSize = true;
-            this.Password.Location = new System.Drawing.Point(13, 65);
-            this.Password.Name = "Password";
-            this.Password.Size = new System.Drawing.Size(53, 13);
-            this.Password.TabIndex = 1;
-            this.Password.Text = "Password";
+            this.rUsername.Location = new System.Drawing.Point(95, 96);
+            this.rUsername.Name = "rUsername";
+            this.rUsername.Size = new System.Drawing.Size(161, 20);
+            this.rUsername.TabIndex = 13;
             // 
-            // Username
+            // Register
             // 
-            this.Username.AutoSize = true;
-            this.Username.Location = new System.Drawing.Point(11, 32);
-            this.Username.Name = "Username";
-            this.Username.Size = new System.Drawing.Size(55, 13);
-            this.Username.TabIndex = 0;
-            this.Username.Text = "Username";
+            this.Register.Location = new System.Drawing.Point(95, 195);
+            this.Register.Name = "Register";
+            this.Register.Size = new System.Drawing.Size(161, 28);
+            this.Register.TabIndex = 16;
+            this.Register.Text = "Register";
+            this.Register.UseVisualStyleBackColor = true;
+            this.Register.Click += new System.EventHandler(this.Register_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(38, 37);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(35, 13);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "Nume";
+            // 
+            // rEmail
+            // 
+            this.rEmail.Location = new System.Drawing.Point(95, 158);
+            this.rEmail.Name = "rEmail";
+            this.rEmail.Size = new System.Drawing.Size(161, 20);
+            this.rEmail.TabIndex = 15;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(38, 68);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(49, 13);
+            this.label11.TabIndex = 6;
+            this.label11.Text = "Prenume";
+            // 
+            // rPassword
+            // 
+            this.rPassword.Location = new System.Drawing.Point(95, 127);
+            this.rPassword.Name = "rPassword";
+            this.rPassword.Size = new System.Drawing.Size(161, 20);
+            this.rPassword.TabIndex = 14;
+            this.rPassword.UseSystemPasswordChar = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(38, 99);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(55, 13);
+            this.label12.TabIndex = 7;
+            this.label12.Text = "Username";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(38, 130);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(53, 13);
+            this.label13.TabIndex = 8;
+            this.label13.Text = "Password";
+            // 
+            // rPrenume
+            // 
+            this.rPrenume.Location = new System.Drawing.Point(95, 65);
+            this.rPrenume.Name = "rPrenume";
+            this.rPrenume.Size = new System.Drawing.Size(161, 20);
+            this.rPrenume.TabIndex = 12;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(38, 161);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(32, 13);
+            this.label14.TabIndex = 9;
+            this.label14.Text = "Email";
+            // 
+            // rNume
+            // 
+            this.rNume.Location = new System.Drawing.Point(95, 34);
+            this.rNume.Name = "rNume";
+            this.rNume.Size = new System.Drawing.Size(161, 20);
+            this.rNume.TabIndex = 11;
             // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(870, 526);
-            this.Controls.Add(this.LoginPage);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.CommandPage);
             this.Controls.Add(this.ProductPage);
+            this.Controls.Add(this.LoginPage);
+            this.Controls.Add(this.CommandPage);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form";
             this.Text = "Form1";
@@ -642,7 +672,10 @@
             this.CommandPage.ResumeLayout(false);
             this.CommandPage.PerformLayout();
             this.LoginPage.ResumeLayout(false);
-            this.LoginPage.PerformLayout();
+            this.loginPanel.ResumeLayout(false);
+            this.loginPanel.PerformLayout();
+            this.registerPanel.ResumeLayout(false);
+            this.registerPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -707,6 +740,9 @@
         private System.Windows.Forms.Label Password;
         private System.Windows.Forms.Label Username;
         private System.Windows.Forms.Button Register;
+        private System.Windows.Forms.ToolStripMenuItem registerToolStripMenuItem;
+        private System.Windows.Forms.Panel loginPanel;
+        private System.Windows.Forms.Panel registerPanel;
     }
 }
 
