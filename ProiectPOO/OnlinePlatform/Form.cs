@@ -367,6 +367,7 @@ namespace OnlinePlatform
         private void cFinalizare_Click(object sender, EventArgs e)
         {
             comanda.TrimiteComanda();
+            GenerateBill();
             comanda = null;
             MessageBox.Show("Comanda a fost plasata cu succes!", "Information");
         }
@@ -482,7 +483,7 @@ namespace OnlinePlatform
             ReadFromFile(2);
         }
 
-        private void facturaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void GenerateBill()
         {
             FileStream fs = new FileStream("Factura.pdf", FileMode.Create, FileAccess.Write, FileShare.None);
 

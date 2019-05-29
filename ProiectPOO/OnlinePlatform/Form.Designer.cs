@@ -64,7 +64,6 @@
             this.Pret = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.produseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comandaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.facturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.registerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -428,13 +427,6 @@
             this.comandaToolStripMenuItem.Text = "Comanda";
             this.comandaToolStripMenuItem.Click += new System.EventHandler(this.comandaToolStripMenuItem_Click);
             // 
-            // facturaToolStripMenuItem
-            // 
-            this.facturaToolStripMenuItem.Name = "facturaToolStripMenuItem";
-            this.facturaToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
-            this.facturaToolStripMenuItem.Text = "Factura";
-            this.facturaToolStripMenuItem.Click += new System.EventHandler(this.facturaToolStripMenuItem_Click);
-            // 
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
@@ -447,7 +439,6 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.produseToolStripMenuItem,
             this.comandaToolStripMenuItem,
-            this.facturaToolStripMenuItem,
             this.loginToolStripMenuItem,
             this.registerToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -859,10 +850,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(870, 526);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.CommandPage);
             this.Controls.Add(this.ProductPage);
             this.Controls.Add(this.AdminPage);
             this.Controls.Add(this.LoginPage);
-            this.Controls.Add(this.CommandPage);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form";
             this.Text = "Form1";
@@ -933,7 +924,6 @@
         private System.Windows.Forms.ColumnHeader ComandaPret;
         private System.Windows.Forms.ToolStripMenuItem produseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem comandaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem facturaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.GroupBox ProductPage;
