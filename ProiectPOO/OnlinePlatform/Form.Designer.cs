@@ -108,8 +108,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.FacturaPage = new System.Windows.Forms.GroupBox();
-            this.Factura = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -126,8 +124,6 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aGarantie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aPret)).BeginInit();
-            this.FacturaPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Factura)).BeginInit();
             this.SuspendLayout();
             // 
             // cFinalizare
@@ -857,35 +853,16 @@
             this.label19.TabIndex = 4;
             this.label19.Text = "Data Expirare";
             // 
-            // FacturaPage
-            // 
-            this.FacturaPage.Controls.Add(this.Factura);
-            this.FacturaPage.Location = new System.Drawing.Point(6, 27);
-            this.FacturaPage.Name = "FacturaPage";
-            this.FacturaPage.Size = new System.Drawing.Size(852, 487);
-            this.FacturaPage.TabIndex = 6;
-            this.FacturaPage.TabStop = false;
-            this.FacturaPage.Text = "Factura";
-            // 
-            // Factura
-            // 
-            this.Factura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Factura.Location = new System.Drawing.Point(6, 19);
-            this.Factura.Name = "Factura";
-            this.Factura.Size = new System.Drawing.Size(839, 462);
-            this.Factura.TabIndex = 0;
-            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(870, 526);
-            this.Controls.Add(this.FacturaPage);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.ProductPage);
             this.Controls.Add(this.AdminPage);
             this.Controls.Add(this.LoginPage);
             this.Controls.Add(this.CommandPage);
-            this.Controls.Add(this.ProductPage);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form";
             this.Text = "Form1";
@@ -914,8 +891,6 @@
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aGarantie)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aPret)).EndInit();
-            this.FacturaPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Factura)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1002,8 +977,6 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.NumericUpDown aGarantie;
-        private System.Windows.Forms.GroupBox FacturaPage;
-        private System.Windows.Forms.DataGridView Factura;
     }
 }
 

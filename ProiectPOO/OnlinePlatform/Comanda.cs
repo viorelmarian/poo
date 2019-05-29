@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Entities
+namespace OnlinePlatform
 {
     public class Comanda
     {
         public Int64 Id { get; private set; }
         public int ClientId { get; private set; }
-        public bool Perisabil { get; set; }
         public List<Tuple<int, int, bool>> Produse { get; private set; }
 
         public Comanda(int ClientId)
